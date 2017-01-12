@@ -73,11 +73,12 @@ namespace somSchedule
 
             foreach( string team in teams.Keys) {
                 TeamData data = teams[team];
-                Console.Out.WriteLine("  "+team +
-                                          ": "+ data.GameCount +
+                Console.Out.WriteLine("  " + team +
+                                          ": " + data.GameCount +
                                           "/ " + data.HomeGames() +
-                                          "-" + data.AwayGames() +
-                                          " days off="+data.daysOff(NumberOfDays)
+                                          "H-" + data.AwayGames() +
+                                          "A days off=" + data.daysOff(NumberOfDays) +
+                                          ", day games=" + data.DayGameCount
                                         );
 
                 Console.Out.WriteLine(data.buidlGameDayString());
@@ -85,9 +86,8 @@ namespace somSchedule
                 foreach ( string opponent in data.opponents.Keys) {
                     GameInfo gi = data.opponents[opponent];
                     Console.Out.WriteLine("    vs " + opponent +
-                              ": " + gi.getAwayGameCount() + gi.getHomeGameCount() +
                               "/ " + gi.getHomeGameCount() +
-                              "-" + gi.getAwayGameCount()
+                              "H-" + gi.getAwayGameCount()+"A"
                             );
                 }
             }

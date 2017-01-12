@@ -10,8 +10,10 @@ namespace somSchedule.analysis
     {
         private string m_abrv = "";
         private int m_gameCount = 0;
+        private int m_DayGameCount = 0;
         public Dictionary<string, GameInfo> opponents = new Dictionary<string, GameInfo>();
         private char[] m_gameDays = new char[200];
+        private int m_HomeGameInARowCount = 0;
 
         public TeamData(string abrv) {
             m_abrv = abrv;
@@ -23,6 +25,10 @@ namespace somSchedule.analysis
 
         public int GameCount {
             get { return m_gameCount; }
+        }
+
+        public int DayGameCount {
+            get { return m_DayGameCount; }
         }
 
         public int HomeGames() {
@@ -42,6 +48,11 @@ namespace somSchedule.analysis
             return games;
         }
 
+        public int HomeGameInARowCount
+        {
+            get { return m_HomeGameInARowCount; }
+        }
+
         public void addHomeGame( int gameDay, string awayTeam, bool nightGame) {
             m_gameDays[gameDay] = 'H';
             m_gameCount++;
@@ -49,6 +60,9 @@ namespace somSchedule.analysis
                 opponents[awayTeam] = new GameInfo(); 
             }
             opponents[awayTeam].addHomeGame(gameDay, awayTeam, nightGame);
+            if (!nightGame)
+                m_DayGameCount++;
+            m_HomeGameInARowCount++;
         }
 
         public void addAwayGame( int gameDay, string homeTeam, bool nightGame)
@@ -59,6 +73,9 @@ namespace somSchedule.analysis
                 opponents[homeTeam] = new GameInfo();
             }
             opponents[homeTeam].addAwayGame(gameDay, homeTeam, nightGame);
+            if (!nightGame)
+                m_DayGameCount++;
+            m_HomeGameInARowCount = 0;
         }
 
         public int daysOff(int numOfDays) {

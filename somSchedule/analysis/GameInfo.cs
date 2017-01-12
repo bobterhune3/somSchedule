@@ -12,8 +12,8 @@ namespace somSchedule.analysis
         private int m_dayGameCount = 0;
 
         private List<bool> m_NightGames = new List<bool>();
-        private Dictionary<string, int> awayGames = new Dictionary<string, int>();
-        private Dictionary<string, int> homeGames = new Dictionary<string, int>();
+        private int awayGames = 0;
+        private int homeGames = 0;
 
         public GameInfo() {
 
@@ -27,10 +27,7 @@ namespace somSchedule.analysis
             else
                 m_dayGameCount++;
 
-            if (!homeGames.ContainsKey(awayTeam))
-                homeGames[awayTeam] = 0;
-
-            homeGames[awayTeam]++;
+            homeGames++;
         }
 
         public void addAwayGame(int gameDay, string homeTeam, bool nightGame)
@@ -41,28 +38,27 @@ namespace somSchedule.analysis
             else
                 m_dayGameCount++;
 
-            if (!awayGames.ContainsKey(homeTeam))
-                awayGames[homeTeam] = 0;
-
-            awayGames[homeTeam]++;
+            awayGames++;
         }
 
         public int getHomeGameCount() {
-            int homeGameCount = 0;
-            foreach (string team in homeGames.Keys) {
-                homeGameCount += homeGames[team];
-            }
-            return homeGameCount;
+            //    int homeGameCount = 0;
+            //     foreach (string team in homeGames.Keys) {
+            //        homeGameCount += homeGames[team];
+            //     }
+            //     return homeGameCount;
+            return homeGames;
         }
 
         public int getAwayGameCount()
         {
-            int awayGameCount = 0;
-            foreach (string team in awayGames.Keys)
-            {
-                awayGameCount += awayGames[team];
-            }
-            return awayGameCount;
+            //     int awayGameCount = 0;
+            ///     foreach (string team in awayGames.Keys)
+            //     {
+            //        awayGameCount += awayGames[team];
+            //     }
+            //     return awayGameCount;
+            return awayGames;
         }
     }
 }

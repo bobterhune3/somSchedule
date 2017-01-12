@@ -48,7 +48,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleItem.cs" />
+    <Compile Include="schedule\BuiltIt.cs" />
     <Compile Include="utils\Config.cs" />
+    <Compile Include="utils\ScheduleMaker.cs" />
     <Compile Include="VerifySchedule.cs" />
   </ItemGroup>
   <ItemGroup>
