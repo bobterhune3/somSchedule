@@ -12,10 +12,10 @@ namespace somSchedule
             Config cfg = new Config("scheduleConfig.txt");
             Dictionary<string, string> data = cfg.readConfiguration();
 
-            ScheduleMaker schedMaker = new ScheduleMaker("sCHtEMP.csv", "2016.csv", data);
+            ScheduleMaker schedMaker = new ScheduleMaker("ScheduleTemplate.csv", "ScheduleOut.TXT", data);
             schedMaker.buildSchedule();
 
-            printVerification("2016.csv");
+            printVerification("ScheduleOut.csv");
 
 
             Console.WriteLine("Press ESC to exit");
