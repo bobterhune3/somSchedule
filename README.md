@@ -1,8 +1,6 @@
 # somSchedule
 
-This project will generate a Strat-o-matic schedule then print out the output to verify it's balanced.
-
-Expects a **scheduleIn.csv** file as input.  You can generate one from the Strat-O-Matic Baseball game
+This project will generate a Strat-o-matic schedule from a template and configuration file then print out the output to verify it's balanced.
 
 ## What this program does
 SOM allows you to generate your own schedule, but it can be difficult and painful to get it right.   This program allows you to generate a one time template and you can rebuild a league schedule as often as you want.
