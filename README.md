@@ -2,7 +2,7 @@
 
 This project will generate a Strat-o-matic schedule then print out the output to verify it's balanced.
 
-Expects a scheduleIn.csv file as input.  You can generate one from the Strat-O-Matic Baseball game
+Expects a **scheduleIn.csv** file as input.  You can generate one from the Strat-O-Matic Baseball game
 
 ## What this program does
 SOM allows you to generate your own schedule, but it can be difficult and painful to get it right.   This program allows you to generate a one time template and you can rebuild a league schedule as often as you want.
@@ -34,7 +34,7 @@ For example:
   AE1, AW1, NW1, NE1
 
 ### STEP TWO - Create a team lookup file
-In a text editor create a file named #ScheduleConfig.txt#
+In a text editor create a file named **ScheduleConfig.txt**
 The contents of the file will assign the teams to codes
 For example:
 ```  AE1=NYA
@@ -48,11 +48,11 @@ You will want to list each team and make sure the team abbreviation is exactly w
 
 ### STEP THREE - Create your schedule.
 This is the hard part.  The important part is to create the schedule using the Generic Codes you just defined in Step Two
-Name the file you created #ScheduleTemplate.csv#
+Name the file you created **ScheduleTemplate.csv**
 Keep this file in a safe place.  You can reuse this template year after year.
 
 ### STEP FOUR - Run the program
-Copy the #ScheduleConfig.txt# and #ScheduleTemplate.csv# files into the directory you copied this program to.
+Copy the **ScheduleConfig.txt** and **ScheduleTemplate.csv** files into the directory you copied this program to.
 An example of both of these files are included in the "example" directory of this project
 To run just run the `somSchedule` program.
 
@@ -81,9 +81,9 @@ Unless there is an error. A report will be generated to the screen.  Errors are 
  ```
  This report will help you verify the schedule you generated is what you expect.
  The first like is
- LINE ONE: TEAM: TOTAL GAMES/ HOME GAMES-AWAY GAMES / Days off count, Day Game count
- LINE TWO: The series schedule, with days off.  This `VVVVHHH HHHHHV` show 4 Away games then 3 home games, one day of per space, then a 5 home games and an away game.
- THE REST: How many home and away games against each team in your league.  This helps when you have an unbalanced schedule.
+ ***LINE ONE***: TEAM: TOTAL GAMES/ HOME GAMES-AWAY GAMES / Days off count, Day Game count
+ ***LINE TWO***: The series schedule, with days off.  This `VVVVHHH HHHHHV` show 4 Away games then 3 home games, one day of per space, then a 5 home games and an away game.
+ ***THE REST***: How many home and away games against each team in your league.  This helps when you have an unbalanced schedule.
  
  ### STEP SIX - Import the schedule file into your league!
  A file named #scheduleOut.TXT# will have been generated.
