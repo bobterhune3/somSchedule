@@ -22,8 +22,8 @@ Build a schedule in the SOM format.  The easiest way to start is to export an ex
 One line per game.  There are four columns.  
 Day Number, Away Team, Home Team, Day or Night game (D or N)
  - Day Number = 1= April 2nd, then number can range from 1 to 250 (Dec 7)
- - Away Team = This is the game abreviation assigned to the team
- - Home Team = This is the game abreviation assigned to the team
+ - Away Team = This is the game abbreviation assigned to the team
+ - Home Team = This is the game abbreviation assigned to the team
  - Day or Night = This value should be D or N, and determines if it is a day or night game
 
 ### STEP ONE - Define your codes.
